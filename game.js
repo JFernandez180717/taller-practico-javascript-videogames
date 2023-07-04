@@ -4,6 +4,7 @@ const btnUp = document.querySelector('#up');
 const btnLeft = document.querySelector('#left');
 const btnRight = document.querySelector('#right');
 const btnDown = document.querySelector('#down');
+const btnReboot = document.querySelector('#reboot');
 const spanLives = document.querySelector('#lives');
 const spanTime = document.querySelector('#time');
 const spanRecord = document.querySelector('#record');
@@ -172,11 +173,21 @@ function showRecord () {
     spanRecord.innerHTML = localStorage.getItem('record_time');
 }
 
+function rebootGame () {
+    level = 0;
+    lives = 3;
+    timeStart = undefined;
+    playerPosition.x = undefined;
+    playerPosition.y = undefined;
+    starGame();
+}
+
 window.addEventListener('keydown', moveByKeys);
 btnUp.addEventListener('click', moveUp);
 btnLeft.addEventListener('click', moveLeft);
 btnRight.addEventListener('click', moveRight);
 btnDown.addEventListener('click', moveDown);
+btnReboot.addEventListener('click', rebootGame);
 
 function moveByKeys (event) {
     if (event.key == 'ArrowUp') moveUp();

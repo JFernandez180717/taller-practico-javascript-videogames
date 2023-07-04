@@ -21,6 +21,14 @@ body {
     background-color: #feff9d;
   }
   
+  .btns-iniciales {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
   .btns {
     display: flex;
     justify-content: center;
